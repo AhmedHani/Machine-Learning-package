@@ -1,0 +1,2 @@
+- All Coursera programming exercises solution
+- Python implmentation for some of famous algorithms
