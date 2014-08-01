@@ -1,1 +1,1 @@
-- Adding Backpropagation Algorithm
+- Re-design the framework
