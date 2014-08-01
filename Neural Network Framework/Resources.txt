@@ -1,0 +1,2 @@
+- For Backpropagation Algorithm
+http://www.codeproject.com/Articles/13582/Back-propagation-Neural-Net
