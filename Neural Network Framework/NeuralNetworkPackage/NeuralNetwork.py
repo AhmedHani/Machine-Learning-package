@@ -162,6 +162,37 @@ class NeuralNetwork():
 
         return sum
 
+    def getMeanSquaredError(self, trueTheta, output):
+        sum = 0.0
+        sumOfSum = 0.0;
+
+        for i in range(0, self.numberOfOutputs):
+            sum = pow((trueTheta[i] - output[i]), 2)
+            sumOfSum += sum;
+
+        return sumOfSum / self.numberOfOutputs
+
+    def getMeanCrossEntropy(self, trueTheta, output):
+        sum = 0.0
+
+        for i in range(0, self.numberOfOutputs):
+            sum += (math.log2(trueTheta[i]) * output[i])
+
+        return -1.0 * sum / self.numberOfOutputs
+
+    def softMax(self, output):
+        newOutput = [0.0 for i in range(0, self.numberOfOutputs)]
+        sum = 0.0
+
+        for i in range(0, self.numberOfOutputs):
+            sum += round(output[i], 2)
+
+        for i in range(0, self.numberOfOutputs):
+            newOutput.append(output[i] / sum)
+
+        return newOutput
+
+
     def backpropagation(self, trueTheta, learningRate, alpha, numOfIterations):
         if len(trueTheta) != self.numberOfOutputs:
             raise Exception("Number of Theta isn't matched!")
